@@ -1,36 +1,27 @@
-const path = require('path');
+const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
-  name: 'word-relay-dev',
-  mode: 'development',
-  devtool: 'eval',
+  mode: "development", // production
+  devtool: "eval", // hidden-source-map
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [".jsx", ".js", ".tsx", ".ts"]
   },
+
   entry: {
-    app: './client',
+    app: "./client"
   },
   module: {
-    rules: [{
-      test: /\.jsx?$/,
-      loader: 'babel-loader',
-      options: {
-        presets: [
-          ['@babel/preset-env', {
-            targets: {browsers: ['last 2 chrome versions']},
-            debug: true,
-          }],
-          '@babel/preset-react',
-        ],
-        plugins: ['react-hot-loader/babel'],
-      },
-      exclude: path.join(__dirname, 'node_modules'),
-    }],
+    rules: [
+      {
+        test: /\.tsx?$/,
+        loader: "awesome-typescript-loader"
+      }
+    ]
   },
-  plugins: [],
+  plugins: [new webpack.LoaderOptionsPlugin({ debug: true })],
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].js',
-    publicPath: '/dist',
-  },
+    filename: "app.js",
+    path: path.join(__dirname, "dist")
+  }
 };
