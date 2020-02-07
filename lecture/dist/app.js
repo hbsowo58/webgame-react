@@ -86,15 +86,15 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./GuGuDan.tsx":
-/*!*********************!*\
-  !*** ./GuGuDan.tsx ***!
-  \*********************/
+/***/ "./WordRelayClass.tsx":
+/*!****************************!*\
+  !*** ./WordRelayClass.tsx ***!
+  \****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nexports.__esModule = true;\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nvar react_1 = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nvar GuGuDan = function () {\r\n    var _a = react_1.useState(Math.ceil(Math.random() * 9)), first = _a[0], setFirst = _a[1];\r\n    var _b = react_1.useState(Math.ceil(Math.random() * 9)), second = _b[0], setSecond = _b[1];\r\n    var _c = react_1.useState(\"\"), value = _c[0], setValue = _c[1];\r\n    var _d = react_1.useState(\"\"), result = _d[0], setResult = _d[1];\r\n    var inputEl = react_1.useRef();\r\n    var onSubmitForm = function (e) {\r\n        e.preventDefault();\r\n        var input = inputEl.current;\r\n        if (parseInt(value) === first * second) {\r\n            setResult(\"정답\");\r\n            setFirst(Math.ceil(Math.random() * 9));\r\n            setSecond(Math.ceil(Math.random() * 9));\r\n            setValue(\"\");\r\n            if (input) {\r\n                input.focus();\r\n            }\r\n        }\r\n        else {\r\n            setResult(\"땡\");\r\n            if (input) {\r\n                input.focus();\r\n            }\r\n        }\r\n    };\r\n    return (React.createElement(React.Fragment, null,\r\n        React.createElement(\"div\", null,\r\n            first,\r\n            \" \\uACF1\\uD558\\uAE30 \",\r\n            second,\r\n            \"\\uB294 ?\",\r\n            React.createElement(\"form\", { onSubmit: onSubmitForm },\r\n                React.createElement(\"input\", { ref: inputEl, type: \"number\", value: value, onChange: function (e) { return setValue(e.target.value); } })),\r\n            React.createElement(\"div\", { id: \"reuslt\" }, result))));\r\n};\r\nexports[\"default\"] = GuGuDan;\r\n\n\n//# sourceURL=webpack:///./GuGuDan.tsx?");
+eval("\r\nvar __extends = (this && this.__extends) || (function () {\r\n    var extendStatics = function (d, b) {\r\n        extendStatics = Object.setPrototypeOf ||\r\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\r\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\r\n        return extendStatics(d, b);\r\n    };\r\n    return function (d, b) {\r\n        extendStatics(d, b);\r\n        function __() { this.constructor = d; }\r\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\r\n    };\r\n})();\r\nexports.__esModule = true;\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nvar createRef = React.createRef;\r\nvar WordRelay = /** @class */ (function (_super) {\r\n    __extends(WordRelay, _super);\r\n    function WordRelay() {\r\n        var _this = _super !== null && _super.apply(this, arguments) || this;\r\n        _this.state = {\r\n            word: \"허범성\",\r\n            value: \"\",\r\n            result: \"\"\r\n        };\r\n        _this.onSubmitForm = function (e) {\r\n            e.preventDefault();\r\n            var input = _this.onRefInput.current;\r\n            if (_this.state.word[_this.state.word.length - 1] === _this.state.value[0]) {\r\n                _this.setState({\r\n                    word: _this.state.value,\r\n                    value: \"\",\r\n                    result: \"딩동댕\"\r\n                });\r\n                if (input) {\r\n                    input.focus();\r\n                }\r\n            }\r\n            else {\r\n                _this.setState({\r\n                    value: \"\",\r\n                    result: \"땡\"\r\n                });\r\n                if (input) {\r\n                    input.focus();\r\n                }\r\n            }\r\n        };\r\n        _this.onChangeInput = function (e) {\r\n            _this.setState({ value: e.target.value });\r\n        };\r\n        _this.input = null;\r\n        _this.onRefInput = createRef();\r\n        return _this;\r\n    }\r\n    WordRelay.prototype.render = function () {\r\n        return (React.createElement(React.Fragment, null,\r\n            React.createElement(\"div\", null, this.state.word),\r\n            React.createElement(\"form\", { onSubmit: this.onSubmitForm },\r\n                React.createElement(\"input\", { ref: this.onRefInput, value: this.state.value, onChange: this.onChangeInput }),\r\n                React.createElement(\"button\", null, \"click\")),\r\n            React.createElement(\"div\", null, this.state.result)));\r\n    };\r\n    return WordRelay;\r\n}(React.Component));\r\nexports[\"default\"] = WordRelay;\r\n\n\n//# sourceURL=webpack:///./WordRelayClass.tsx?");
 
 /***/ }),
 
@@ -106,7 +106,7 @@ eval("\r\nexports.__esModule = true;\r\nvar React = __webpack_require__(/*! reac
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nexports.__esModule = true;\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nvar ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\r\nvar GuGuDan_1 = __webpack_require__(/*! ./GuGuDan */ \"./GuGuDan.tsx\");\r\nReactDOM.render(React.createElement(GuGuDan_1[\"default\"], null), document.querySelector(\"#root\"));\r\n\n\n//# sourceURL=webpack:///./client.tsx?");
+eval("\r\nexports.__esModule = true;\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nvar ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\r\nvar react_hot_loader_1 = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\");\r\n// import GuGuDan from \"./GuGuDan\";\r\nvar WordRelayClass_1 = __webpack_require__(/*! ./WordRelayClass */ \"./WordRelayClass.tsx\");\r\nvar Hot = react_hot_loader_1.hot(WordRelayClass_1[\"default\"]);\r\nReactDOM.render(React.createElement(WordRelayClass_1[\"default\"], null), document.querySelector(\"#root\"));\r\n\n\n//# sourceURL=webpack:///./client.tsx?");
 
 /***/ }),
 
@@ -167,6 +167,30 @@ eval("/** @license React v16.12.0\n * react-dom.development.js\n *\n * Copyright
 
 "use strict";
 eval("\n\nfunction checkDCE() {\n  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */\n  if (\n    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||\n    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'\n  ) {\n    return;\n  }\n  if (true) {\n    // This branch is unreachable because this function is only called\n    // in production, but the condition is true only in development.\n    // Therefore if the branch is still here, dead code elimination wasn't\n    // properly applied.\n    // Don't change the message. React DevTools relies on it. Also make sure\n    // this message doesn't occur elsewhere in this function, or it will cause\n    // a false positive.\n    throw new Error('^_^');\n  }\n  try {\n    // Verify that the code above has been dead code eliminated (DCE'd).\n    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);\n  } catch (err) {\n    // DevTools shouldn't crash React, no matter what.\n    // We should still report in case we break this code.\n    console.error(err);\n  }\n}\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs/react-dom.development.js */ \"./node_modules/react-dom/cjs/react-dom.development.js\");\n}\n\n\n//# sourceURL=webpack:///./node_modules/react-dom/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("function _interopDefault(e){return e&&\"object\"==typeof e&&\"default\"in e?e.default:e}Object.defineProperty(exports,\"__esModule\",{value:!0});var React=_interopDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));function AppContainer(e){return AppContainer.warnAboutHMRDisabled&&(AppContainer.warnAboutHMRDisabled=!0,console.error(\"React-Hot-Loader: misconfiguration detected, using production version in non-production environment.\"),console.error(\"React-Hot-Loader: Hot Module Replacement is not enabled.\")),React.Children.only(e.children)}AppContainer.warnAboutHMRDisabled=!1;var hot=function e(){return e.shouldWrapWithAppContainer?function(e){return function(n){return React.createElement(AppContainer,null,React.createElement(e,n))}}:function(e){return e}};hot.shouldWrapWithAppContainer=!1;var areComponentsEqual=function(e,n){return e===n},setConfig=function(){},cold=function(e){return e},configureComponent=function(){};exports.AppContainer=AppContainer,exports.hot=hot,exports.areComponentsEqual=areComponentsEqual,exports.setConfig=setConfig,exports.cold=cold,exports.configureComponent=configureComponent;\n\n\n//# sourceURL=webpack:///./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js?");
+
+/***/ }),
+
+/***/ "./node_modules/react-hot-loader/index.js":
+/*!************************************************!*\
+  !*** ./node_modules/react-hot-loader/index.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nif (false) {} else if (false) {} else if (typeof window === 'undefined') {\n  // this is just server environment\n  module.exports = __webpack_require__(/*! ./dist/react-hot-loader.production.min.js */ \"./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js\");\n} else if (true) {\n  module.exports = __webpack_require__(/*! ./dist/react-hot-loader.production.min.js */ \"./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js\");\n  module.exports.AppContainer.warnAboutHMRDisabled = true;\n  module.exports.hot.shouldWrapWithAppContainer = true;\n} else { var jsFeaturesPresent, evalAllowed; }\n\n\n//# sourceURL=webpack:///./node_modules/react-hot-loader/index.js?");
 
 /***/ }),
 
