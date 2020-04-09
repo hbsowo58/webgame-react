@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./GuGuDan.tsx":
+/*!*********************!*\
+  !*** ./GuGuDan.tsx ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nexports.__esModule = true;\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nvar react_1 = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nvar GuGuDan = function () {\r\n    var _a = react_1.useState(Math.ceil(Math.random() * 9)), first = _a[0], setFirst = _a[1];\r\n    var _b = react_1.useState(Math.ceil(Math.random() * 9)), second = _b[0], setSecond = _b[1];\r\n    var _c = react_1.useState(\"\"), value = _c[0], setValue = _c[1];\r\n    var _d = react_1.useState(\"\"), result = _d[0], setResult = _d[1];\r\n    var inputEl = react_1.useRef();\r\n    var onSubmitForm = function (e) {\r\n        e.preventDefault();\r\n        var input = inputEl.current;\r\n        if (parseInt(value) === first * second) {\r\n            setResult(\"정답\");\r\n            setFirst(Math.ceil(Math.random() * 9));\r\n            setSecond(Math.ceil(Math.random() * 9));\r\n            setValue(\"\");\r\n            if (input) {\r\n                input.focus();\r\n            }\r\n        }\r\n        else {\r\n            setResult(\"땡\");\r\n            if (input) {\r\n                input.focus();\r\n            }\r\n        }\r\n    };\r\n    return (React.createElement(React.Fragment, null,\r\n        React.createElement(\"div\", null,\r\n            first,\r\n            \" \\uACF1\\uD558\\uAE30 \",\r\n            second,\r\n            \"\\uB294 ?\",\r\n            React.createElement(\"form\", { onSubmit: onSubmitForm },\r\n                React.createElement(\"input\", { ref: inputEl, type: \"number\", value: value, onChange: function (e) { return setValue(e.target.value); } })),\r\n            React.createElement(\"div\", { id: \"reuslt\" }, result))));\r\n};\r\nexports[\"default\"] = GuGuDan;\r\n\n\n//# sourceURL=webpack:///./GuGuDan.tsx?");
+
+/***/ }),
+
 /***/ "./WordRelayClass.tsx":
 /*!****************************!*\
   !*** ./WordRelayClass.tsx ***!
@@ -106,7 +118,7 @@ eval("\r\nvar __extends = (this && this.__extends) || (function () {\r\n    var 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nexports.__esModule = true;\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nvar ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\r\nvar react_hot_loader_1 = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\");\r\n// import GuGuDan from \"./GuGuDan\";\r\nvar WordRelayClass_1 = __webpack_require__(/*! ./WordRelayClass */ \"./WordRelayClass.tsx\");\r\nvar Hot = react_hot_loader_1.hot(WordRelayClass_1[\"default\"]);\r\nReactDOM.render(React.createElement(WordRelayClass_1[\"default\"], null), document.querySelector(\"#root\"));\r\n\n\n//# sourceURL=webpack:///./client.tsx?");
+eval("\r\nexports.__esModule = true;\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nvar ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\r\nvar react_hot_loader_1 = __webpack_require__(/*! react-hot-loader */ \"./node_modules/react-hot-loader/index.js\");\r\nvar GuGuDan_1 = __webpack_require__(/*! ./GuGuDan */ \"./GuGuDan.tsx\");\r\n// import GuGuDan from \"./GuGuDanClass\";\r\n// import WordRelay from \"./WordRelay\";\r\nvar WordRelayClass_1 = __webpack_require__(/*! ./WordRelayClass */ \"./WordRelayClass.tsx\");\r\nvar Hot = react_hot_loader_1.hot(WordRelayClass_1[\"default\"]);\r\nReactDOM.render(React.createElement(GuGuDan_1[\"default\"], null), document.querySelector(\"#root\"));\r\n\n\n//# sourceURL=webpack:///./client.tsx?");
 
 /***/ }),
 
